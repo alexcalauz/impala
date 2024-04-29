@@ -1,0 +1,168 @@
+// Table
+
+.o-table {
+  border-spacing: 0;
+  empty-cells: show;
+  border-radius: $o-table-border-radius;
+  overflow: hidden;
+  font-size: $font-size-m;
+  box-shadow: $o-table-box-shadow;
+  background-color: $o-table-background-color;
+
+  &--alt {
+    .table__row:nth-child(2n) {
+      background-color: $o-table-row-alt-background-color;
+    }
+  }
+
+  &--fixed {
+    table-layout: fixed;
+  }
+
+  &.o-table--trimmedCells {
+    .table__cell {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      word-break: break-word;
+    }
+  }
+
+  .o-link {
+    color: $o-table-link-color;
+    text-decoration: none;
+    &:hover {
+      color: $o-table-link-color-hover;
+    }
+  }
+
+  &--withHover {
+    tbody .table__row:hover {
+      background: $o-table-hover-background-color;
+      & .table__cell--color-secondary {
+        background: $o-table-hover-background-color-secondary;
+      }
+      & .table__cell--color-primary {
+        background: $o-table-hover-background-color-primary;
+      }
+      & .table__cell--color-warning {
+        background: $o-table-hover-background-color-warning;
+      }
+    }
+  }
+
+  .table {
+    &__caption {
+      display: none;
+    }
+
+    &__link {
+      color: $o-table-link-color;
+      font-size: 16px;
+      &:hover {
+        color: $o-table-link-hover-color;
+      }
+    }
+
+    &__head {
+      .table__row {
+        border-top: none;
+        border-bottom: 3px solid $o-table-row-border-color;
+      }
+      .table__cell {
+        font-size: $font-size-s;
+        color: $o-table-head-color;
+      }
+
+      &-icons {
+        margin-left: 3px;
+        width: 12px;
+        display: inline-block;
+        vertical-align: middle;
+
+        em {
+          vertical-align: middle;
+          line-height: 7px;
+          display: block;
+          height: 7px;
+          &::before {
+            display: inline-block;
+          }
+        }
+      }
+    }
+    &__row,
+    &__cell {
+      color: $o-table-row-color;
+      font-size: inherit;
+      margin: 0;
+      overflow: visible;
+      padding: calc($gutter / 2);
+      vertical-align: middle;
+
+      &--center {
+        text-align: center;
+      }
+
+      &--left {
+        text-align: left;
+      }
+
+      &--right {
+        text-align: right;
+      }
+    }
+
+    &__cell {
+      padding: 15px 10px;
+      &--color-secondary {
+        background: $o-table-background-color-secondary;
+      }
+      &--color-primary {
+        background: $o-table-background-color-primary;
+      }
+      &--color-warning {
+        background: $o-table-background-color-warning;
+      }
+      .icon {
+        vertical-align: middle;
+      }
+    }
+
+    &__row {
+      border-top: 1px solid $o-table-row-border-color;
+
+      &.has-error {
+        background-color: rgba($color-error, 0.25);
+      }
+
+      &.has-warning {
+        background-color: rgba($color-warning, 0.25);
+      }
+
+      &.table__row--alt {
+        background-color: $o-table-row-alt-background-color;
+      }
+
+      &.align-tr-top td.table__cell {
+        vertical-align: top;
+      }
+
+      &.highlight {
+        background-color: $o-table-row-highlight-background-color;
+      }
+
+      &--focused {
+        position: relative;
+        transform: scale(1);
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+        &::before {
+          width: 100%;
+          height: 100%;
+          left: 0;
+          top: 0;
+          display: block;
+        }
+      }
+    }
+  }
+}

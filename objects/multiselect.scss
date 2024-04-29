@@ -1,0 +1,10 @@
+// Multi Select
+
+.o-multiselect {
+  @extend %input;
+  @extend %reset-style;
+  padding: $gutter / 2;
+  height: auto;
+  display: block;
+  overflow-y: auto;
+}

@@ -1,0 +1,207 @@
+// Vars
+
+//Base grid classes
+
+$half-gutter: calc($gutter / 2);
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+
+  > [class*=col-] {
+    // overflow-x: hidden;
+    &.col--vertical-align-middle {
+      align-self: center;
+    }
+    &.col--vertical-align-bottom {
+      align-self: end;
+    }
+    &.col--vertical-align-top {
+      align-self: start;
+    }
+  }
+
+  &--spaced {
+      margin-left: - $half-gutter;
+      margin-right: - $half-gutter;
+      margin-top: - $half-gutter;
+      margin-bottom: - $half-gutter;
+    > [class*=col-] {
+      padding-left: $half-gutter;
+      padding-right: $half-gutter;
+      margin-top: $half-gutter;
+      margin-bottom: $half-gutter;
+    }
+  }
+
+  &--spaced-all {
+    padding: $half-gutter;
+    > [class*=col-] {
+      padding: $half-gutter;
+    }
+  }
+
+  &--inline {
+    display: inline-flex;
+  }
+
+  &--vertical-align-top {
+    align-items: start;
+  }
+
+  &--vertical-align-center {
+    align-items: center;
+  }
+
+  &--vertical-align-bottom {
+    align-items: bottom;
+  }
+}
+
+//Arrange the grid options
+
+$gridList: ();
+
+@each $n in $grids-sizes {
+  @each $m in $grids-sizes {
+    @if(map-get($gridList, $n) == null and $n % $m == 0) {
+      $gridList: map-merge($gridList, ($m: $n));
+    }
+  }
+}
+
+//Generate the grid classes
+
+$ratios: ();
+@each $key, $value in $gridList {
+  @for $i from 1 through $key {
+    $ratio: (amount: $i, whole: $key);
+    $name: #{$i}_#{$key};
+    $ratios: map-merge($ratios, ($name: $ratio));
+  }
+}
+
+@mixin grid-classes($device) {
+
+  @each $key, $value in $ratios {
+
+    $amount: map-get($map: $value, $key: 'amount');
+    $whole: map-get($map: $value, $key: 'whole');
+
+    $width: calc($amount / $whole * 100%);
+
+    %BASE_#{$device}_#{$key} {
+      flex-basis: $width;
+    }
+  }
+
+  $deviceNameGrid: '';
+  @if $device != 'default' {
+    $deviceNameGrid: '-' + $device;
+  }
+  @each $key, $value in $gridList {
+    @for $i from 1 through $key {
+      .col-#{$deviceNameGrid}-#{$i}-#{$key} {
+        @extend %BASE_#{$device}_#{$i}_#{$key};
+      }
+    }
+  }
+
+  .col-#{$deviceNameGrid}-auto {
+    flex-basis: auto;
+    flex-shrink: 0;
+  }
+
+  // Visibility Options
+
+  .col-#{$deviceNameGrid}-hide {
+    display: none;
+  }
+  .col-#{$deviceNameGrid}-show {
+    display: block;
+  }
+
+  // Grow Options
+
+  .col-#{$deviceNameGrid}-grow {
+    flex-grow: 1;
+  }
+  .col-#{$deviceNameGrid}-nogrow {
+    flex-grow: 0;
+  }
+
+  .col-#{$deviceNameGrid}-shrink {
+    flex-shrink: 1;
+  }
+  .col-#{$deviceNameGrid}-noshrink {
+    flex-shrink: 0;
+  }
+
+  // Order Options
+
+  .col-#{$deviceNameGrid}-order-first {
+    order: -1;
+  }
+
+  .col-#{$deviceNameGrid}-order-normal {
+    order: initial;
+  }
+  .col-#{$deviceNameGrid}-order-last {
+    order: 99999;
+  }
+
+  @if ($order-classes > 0) {
+    @for $i from 1 to $order-classes + 1 {
+      .col-#{$deviceNameGrid}-order-#{$i} {
+        order: #{$i};
+      }
+    }
+  }
+
+  // Wrap Options
+
+  .grid-#{$deviceNameGrid}-multiline {
+    flex-wrap: wrap;
+  }
+  .grid-#{$deviceNameGrid}-singleline {
+    flex-wrap: nowrap;
+  }
+
+  // Align Options
+
+  .grid-#{$deviceNameGrid}-align-left {
+    justify-content: left;
+  }
+  .grid-#{$deviceNameGrid}-align-center {
+    justify-content: center;
+  }
+  .grid-#{$deviceNameGrid}-align-right {
+    justify-content: right;
+  }
+}
+
+// Media query mixin
+@mixin media-query($device, $allTheWayDown: 0) {
+  $breakpoints: map-get($media-query-breakpoints, $device);
+  
+  $min-width: 0;
+  @if ($allTheWayDown == 0) {
+    $min-width: nth($breakpoints, 1);
+  }
+  $max-width: 999999px;
+
+  @if length($breakpoints) == 2 {
+    $max-width: nth($breakpoints, 2);
+  }
+
+  @media screen and (min-width: $min-width) and (max-width: $max-width) {
+    @content;
+  }
+}
+
+// Generate the responsive grids
+@each $device, $breakpoints in $media-query-breakpoints {
+  @include media-query($device) {
+    @include grid-classes($device);
+  }
+}

@@ -1,0 +1,35 @@
+// Select
+
+.o-select {
+  @extend %input;
+  @extend %reset-style;
+  height: $gutter * 2;
+  padding: 0 $gutter * 1.5 0 calc($gutter / 2);
+  display: block;
+  @extend %input-arrow;
+  background-position: calc(100% - 13px) center;
+
+  &:focus {
+    outline: none;
+  }
+
+  &--mini {
+    height: $gutter * 1.5;
+    font-weight: bold;
+  }
+
+  &--inverted {
+    @extend %input-arrow-light;
+    height: $gutter * 1.5;
+    background-color: $o-select-inverted-background-color;
+    border-color: $o-select-inverted-border-color;
+    color: #fff;
+    option {
+      background: #fff;
+      color: $o-select-inverted-background-color;
+    }
+    &:focus {
+      border-color: $o-select-inverted-border-color;
+    }
+  }
+}

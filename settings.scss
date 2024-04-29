@@ -1,0 +1,222 @@
+
+/*************************************************/
+/*                     GRIDS                     */
+/*************************************************/
+
+$grids-sizes: (1, 2, 3, 4, 5, 6, 7, 12) !default;
+$media-query-breakpoints: (
+  default: (0, 99999px),
+  xs: (0px, 576px),
+  sm: (577px, 768px),
+  md: (769px, 992px),
+  lg: (993px, 1200px),
+  xl: (1201px, 1400px),
+  xxl: (1401px, 99999px),
+) !default;
+
+$order-classes: 10 !default;
+
+/*************************************************/
+/*                     UTILS                     */
+/*************************************************/
+
+// Backgrounds
+
+$backgrounds: (
+  main: $color-positive,
+  positive: $color-positive,
+  negative: $color-negative,
+  primary: $color-primary,
+  secondary: $color-secondary,
+  alt: $color-alt,
+  success: $color-success,
+  warning: $color-warning,
+  warning-light: lighten($color-warning, 40),
+  error: $color-error,
+  neutral: $color-neutral,
+  neutral-dark: $color-neutral-dark,
+) !default;
+
+// Text Colors
+
+$text-colors: (
+  negative: $color-negative,
+  positive: $color-positive,
+  neutral: $color-neutral,
+  neutral-dark: $color-neutral-dark,
+  alt: $color-alt,
+  primary: $color-primary,
+  secondary: $color-secondary,
+  success: $color-success,
+  warning: $color-warning,
+  error: $color-error,
+) !default;
+
+// Borders
+
+$borders: (
+  main: ($border-width-default, solid, $color-neutral-dark),
+  secondary: ($border-width-secondary, solid, $color-secondary),
+  alt: ($border-width-alt, solid, $color-primary),
+  error: ($border-width-default, solid, $color-error),
+  warning: ($border-width-default, solid, $color-warning),
+) !default;
+
+//Box Shadows
+$box-shadows: (
+  main: $box-shadow-main,
+) !default;
+
+// Badges
+
+$badges: (
+  primary: ($color-primary, $color-positive),
+  secondary: ($color-secondary, $color-positive),
+  alt: ($color-alt, $color-positive),
+  warning: ($color-warning, darken($color-warning, 20%)),
+) !default;
+
+// Border Widths
+
+$border-widths: (
+  main: $border-width-default,
+  alt: $border-width-alt,
+) !default;
+
+// Border Radiuses
+
+$border-radiuses: (
+  main: $border-radius-default,
+  alt: $border-radius-alt,
+) !default;
+
+// Margins
+
+$margins: (
+  main: 1,
+  half: 0.5,
+  quarter: 0.25,
+  double: 2,
+  no: 0
+) !default;
+
+// Paddings
+
+$paddings: (
+  main: 1,
+  half: 0.5,
+  quarter: 0.25,
+  double: 2,
+  no: 0
+) !default;
+
+// Font Sizes
+
+$font-sizes: (
+  xxxs: $font-size-xxxs,
+  xxs: $font-size-xxs,
+  xs: $font-size-xs,
+  s: $font-size-s,
+  m: $font-size-m,
+  l: $font-size-l,
+  xl: $font-size-xl,
+  xxl: $font-size-xxl,
+  xxxl: $font-size-xxxl,
+) !default;
+
+// Font Weights
+
+$font-weights: (
+  normal: 'normal',
+  semibold: '700',
+  bold: 'bold',
+) !default;
+
+// Aspect Ratios
+
+$aspect-ratios: (
+  (2, 1),
+  (1, 1),
+  (16, 9),
+  (4, 3),
+) !default;
+
+/*************************************************/
+/*                    OBJECTS                    */
+/*************************************************/
+
+// Buttons
+
+$buttons: (
+  primary: (
+    normal: (
+      backgroundColor: $color-primary,
+      textColor: $color-positive,
+    ),
+    hover: (
+      backgroundColor: darken($color-primary, 10),
+    ),
+    active: (
+      backgroundColor: darken($color-primary, 20),
+    ),
+  ),
+  secondary: (
+    normal: (
+      backgroundColor: $color-secondary,
+      textColor: $color-positive,
+    ),
+    hover: (
+      backgroundColor: darken($color-secondary, 10),
+    ),
+    active: (
+      backgroundColor: darken($color-secondary, 20),
+    ),
+  ),
+  alt: (
+    normal: (
+      backgroundColor: transparent,
+      textColor: $color-positive,
+      border: (2px, solid, $color-positive),
+    ),
+    hover: (
+      backgroundColor: rgba($color-positive, .20),
+    ),
+    active: (
+      backgroundColor: rgba($color-positive, .10),
+    ),
+  ),
+  danger: (
+    normal: (
+      backgroundColor: $color-error,
+      textColor: $color-positive,
+    ),
+    hover: (
+      backgroundColor: darken($color-error, 10),
+    ),
+    active: (
+      backgroundColor: darken($color-error, 20),
+    ),
+  ),
+  warning: (
+    normal: (
+      backgroundColor: $color-warning,
+      textColor: $color-positive,
+    ),
+    hover: (
+      backgroundColor: darken($color-warning, 10),
+    ),
+    active: (
+      backgroundColor: darken($color-warning, 20),
+    ),
+  ),
+) !default;
+
+// Alerts
+
+$alerts: (
+  default: ($color-neutral, 55%, 20%),
+  success: ($color-success, 53%, 35%),
+  info: ($color-info, 44%, 33%),
+  warning: ($color-warning, 38%, 21%),
+  error: ($color-error, 32%, 25%),
+) !default;

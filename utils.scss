@@ -1,0 +1,260 @@
+@import 'settings.scss';
+
+$displays: (block, inline, inline-block, flex, none, inline-flex, grid, inline-grid);
+$text-transforms: (uppercase, lowercase, capitalize);
+$positions: (static, relative, absolute, fixed);
+$text-aligns: (left, right, center);
+$vertical-aligns: (top, bottom, middle);
+$floats: (left, right);
+
+@mixin aspect-ratios($device: '') {
+  @each $aspect-ratio in $aspect-ratios {
+    $width: nth($aspect-ratio, 1);
+    $height: nth($aspect-ratio, 2);
+
+    $device-name: '';
+    @if $device != '' {
+      $device-name: #{$device}-;
+    }
+
+    .u-#{$device-name}ar--#{$width}-#{$height} {
+      padding-bottom: calc($height / $width * 100%);
+    }
+  }
+}
+
+@mixin borders($device: '') {
+  @each $name, $border in $borders {
+    $sep: '-';
+    @each $direction in (all, top, right, bottom, left) {
+      $direction-sep: '-';
+      @if $direction == 'all' {
+        $direction-sep: '';
+        $direction: '';
+      }
+      @if $name == 'main' {
+        $sep: '';
+        $name: '';
+      }
+      $device-name: '';
+      @if $device != '' {
+        $device-name: #{$device}-;
+      }
+      .u-#{$device-name}border#{$direction-sep}#{$direction}#{$sep}#{$name} {
+        border#{$direction-sep}#{$direction}: nth($border, 1) nth($border, 2) nth($border, 3)
+      }
+    }
+  }
+}
+
+@mixin badges() {
+  @if (length($badges) > 0) {
+    .u-badge {
+      padding: $u-badge-padding-v $u-badge-padding-h;
+      border-radius: $u-badge-border-radius;
+      font-size: $u-badge-font-size;
+    }
+    @each $name, $badge in $badges {
+      .u-badge-#{$name} {
+        background-color: nth($border, 1);
+        color: nth($border, 2);
+      }
+    }
+  }
+}
+
+@mixin space($settings, $type, $device: '') {
+  @each $name, $multiplier in $settings {
+    @if $name == main {
+      $name: '';
+    }
+    @each $direction in (all, top, right, bottom, left) {
+      $style: #{$type}-#{$direction};
+      $rule: #{$name}#{$type}-#{$direction};
+      @if $direction == 'all' {
+        $style: $type;
+        $rule: #{$name}#{$type};
+      }
+      $device-name: '';
+      @if $device != '' {
+        $device-name: #{$device}-;
+      }
+      .u-#{$device-name}#{$rule} {
+        #{$style}: $gutter * $multiplier;
+      }
+    }
+  }
+}
+
+@mixin main-utils($set, $prefix, $device: '') {
+  @each $name, $value in $set {
+    $sep: '-';
+    @if not $value {
+      $value: $name;
+    }
+    @if $name == 'main' {
+      $sep: '';
+      $name: '';
+    }
+    $device-name: '';
+    @if $device != '' {
+      $device-name: #{$device}-;
+    }
+    .u-#{$device-name}#{$prefix}#{$sep}#{$name} {
+      #{$prefix}: #{$value};
+    }
+  }
+}
+
+// Colors
+@include main-utils($text-colors, 'color');
+
+// Background Colors
+@include main-utils($backgrounds, 'background-color');
+
+// Border Radiuses
+@include main-utils($border-radiuses, 'border-radius');
+
+// Border Widths
+@include main-utils($border-widths, 'border-width');
+
+// Font Sizes
+@include main-utils($font-sizes, 'font-size');
+
+// Font Weights
+@include main-utils($font-weights, 'font-weight');
+
+// Displays
+@include main-utils($displays, 'display');
+
+// Text Transforms
+@include main-utils($text-transforms, 'text-transform');
+
+// Floats
+@include main-utils($floats, 'float');
+
+// Positions
+@include main-utils($positions, 'position');
+
+// Text Aligns
+@include main-utils($text-aligns, 'text-align');
+
+// Vertical Align
+@include main-utils($vertical-aligns, 'vertical-align');
+
+// Paddings
+@include space($paddings, 'padding');
+
+// Margins
+@include space($margins, 'margin');
+
+// Aspect Ratios
+@include aspect-ratios();
+
+// Aspect Borders
+@include borders();
+
+// Box Shadows
+@include main-utils($box-shadows, 'box-shadow');
+
+@each $device, $breakpoints in $media-query-breakpoints {
+  $min-width: nth($breakpoints, 1);
+  $max-width: nth($breakpoints, 2);
+  @media screen and (min-width: $min-width) and (max-width: $max-width) {
+
+    @include main-utils($text-colors, 'color', $device);
+
+    // Background Colors
+    @include main-utils($backgrounds, 'background-color', $device);
+
+    // Border Radiuses
+    @include main-utils($border-radiuses, 'border-radius', $device);
+
+    // Border Widths
+    @include main-utils($border-widths, 'border-width', $device);
+
+    // Font Sizes
+    @include main-utils($font-sizes, 'font-size', $device);
+
+    // Font Weights
+    @include main-utils($font-weights, 'font-weight', $device);
+
+    // Displays
+    @include main-utils($displays, 'display', $device);
+
+    // Text Transforms
+    @include main-utils($text-transforms, 'text-transform', $device);
+
+    // Floats
+    @include main-utils($floats, 'float', $device);
+
+    // Positions
+    @include main-utils($positions, 'position', $device);
+
+    // Text Aligns
+    @include main-utils($text-aligns, 'text-align', $device);
+
+    // Vertical Align
+    @include main-utils($vertical-aligns, 'vertical-align', $device);
+
+    // Paddings
+    @include space($paddings, 'padding', $device);
+
+    // Margins
+    @include space($margins, 'margin', $device);
+
+    // Aspect Ratios
+    @include aspect-ratios($device);
+
+  // Aspect Borders
+  @include borders($device);
+  }
+}
+
+.u-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.u-center-h {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.u-center-v {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.u-ar__content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  @extend .u-center;
+}
+
+*[class*=u-ar--] {
+  position: relative;
+}
+
+.u-fullheight {
+  height: 100%;
+}
+
+.u-fullwidth {
+  width: 100%;
+}
+
+.u-font-size-0 {
+  font-size: 0;
+}
+
+.u-overflow-hidden {
+  overflow: hidden;
+}
+
+.u-white-space-nowrap {
+  white-space: nowrap;
+}

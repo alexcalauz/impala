@@ -1,0 +1,54 @@
+// Base
+
+body {
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  font-size: $font-size-m;
+  line-height: 20px;
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: bold;
+}
+
+a {
+  color: $color-positive;
+  text-decoration: none;
+}
+
+h1 {
+  padding: $gutter 0;
+  font-size: $font-size-h1;
+  line-height: $font-size-h1 + 4px;
+}
+
+h2 {
+  padding: $gutter 0;
+  font-size: $font-size-h2;
+  line-height: $font-size-h2 + 4px;
+}
+
+h3 {
+  padding: $gutter / 2 0;
+  font-size: $font-size-h3;
+  line-height: $font-size-h3 + 2px;
+}
+
+h4 {
+  padding: $gutter / 2 0;
+  font-size: $font-size-h4;
+  line-height: $font-size-h4 + 4px;
+}
+
+h5 {
+  font-size: $font-size-h5;
+  line-height: $font-size-h5 + 4px;
+}
+
+h6 {
+  font-size: $font-size-h6;
+  line-height: $font-size-h6 + 4px;
+}

@@ -1,0 +1,48 @@
+// Search
+
+.o-search {
+  @extend %input;
+  @extend %reset-style;
+  @extend %input-arrow;
+  height: $gutter * 2;
+  padding: 0 calc($gutter / 2);
+  display: block;
+  background-position: calc(100% - 16px) center;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::-webkit-search-decoration,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    appearance: none;
+    -webkit-appearance: none;
+  }
+
+  &::-webkit-search-cancel-button {
+    @extend %reset-style;
+    opacity: 1;
+    width: $gutter;
+    height: $gutter;
+    cursor: pointer;
+    height: 40px;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none'%3e%3cpath d='M12 1L11 0L6 5L1 0L0 1L5 6L0 11L1 12L6 7L11 12L12 11L7 6L12 1Z' fill='%23999999'/%3e%3c/svg%3e");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 10px;
+    margin: 0;
+  }
+
+  &::-webkit-calendar-picker-indicator {
+    @extend %input-arrow;
+    opacity: 1;
+    block-size: $gutter !important;
+    list-style: none !important;
+    display: inline-block !important;
+    padding: 0;
+    width: $gutter;
+    cursor: pointer;
+    color: transparent;
+  }
+}

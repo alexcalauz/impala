@@ -1,0 +1,121 @@
+// Modal
+
+.c-modal {
+  display: none;
+  position: fixed;
+  @extend .u-center;
+  background: $c-modal-background;
+  max-width: $c-modal-max-width;
+  // max-height: calc(100vh - #{$header-height});
+  max-height: calc(100vh - $gutter * 2);
+  min-width: $c-modal-min-width;
+  // overflow: auto;
+  // margin-top: calc($header-height / 2);
+  z-index: $z-index-above-header;
+  white-space: pre-line;
+  border-radius: $c-modal-border-radius;
+  box-shadow: $c-modal-box-shadow;
+  flex-direction: column;
+
+  &.is-visible {
+    display: flex;
+  }
+
+  &.is-overflow-visible {
+    overflow: visible;
+  }
+
+  &.c-modal-large {
+    width: $c-modal-large-width;
+    max-width: none;
+    min-width: none;
+
+    @media screen and (max-width: $c-modal-large-width) {
+      width: 100vw;
+    }
+  }
+
+  &.c-modal-xlarge {
+    width: $c-modal-xlarge-width;
+    max-width: none;
+    min-width: none;
+
+    @media screen and (max-width: $c-modal-xlarge-width) {
+      width: 100vw;
+    }
+  }
+
+  &.c-modal-full {
+    width: 99%;
+    max-width: none;
+    min-width: none;
+  }
+
+  @media screen and (max-width: $c-modal-goes-fullscreen-at) {
+    &.is-mobile-fullheight {
+      top: $header-height;
+      bottom: 0;
+      transform: none;
+      left: 0;
+      width: 100%;
+      margin-top: 0px;
+    }
+    width: calc(100vw - #{$gutter * 2});
+    max-width: none;
+    min-width: unset;
+    overflow: auto;
+
+    &.is-overflow-visible {
+      overflow: auto;
+    }
+  }
+}
+
+.modal {
+  &__content {
+    overflow-y: auto;
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+
+  &__close {
+    position: absolute;
+    top: $gutter;
+    right: $gutter;
+    font-size: $font-size-m;
+    cursor: pointer;
+    color: $c-modal-close-color;
+
+    .c-modal--alert & {
+      color: $c-modal-title-color;
+    }
+  }
+
+  &__backdrop {
+    position: fixed;
+    z-index: 180;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $c-modal-backdrop-bg-color;
+    display: none;
+
+    .is-under-nav & {
+      z-index: $z-index-below-header;
+    }
+
+    .c-modal.is-visible + & {
+      display: block;
+    }
+  }
+
+  &__title {
+    padding: $gutter;
+    flex-grow: 0;
+    flex-shrink: 0;
+    .c-modal--alert & {
+      color: $c-modal-title-color;
+    }
+  }
+}

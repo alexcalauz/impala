@@ -1,0 +1,87 @@
+// Loader
+
+.o-loader {
+  /* Loader hidden by default. */
+  vertical-align: middle;
+  @extend %icon;
+  @extend .icon-#{$o-loader-icon-name};
+  display: none;
+  font-size: 0;
+
+  /*
+    Inline Loader:
+    This is the default option, (no modifiers)
+    Doesn't have a background
+    Inherits color and font-size from parent
+    Can be used on a button or as a placeholder
+  */
+  &::before {
+    font-weight: 600;
+    font-size: $font-size-s;
+    display: inline-block;
+    animation-name: spin;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  &%is-not-static {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: $o-loader-background-color;
+
+    &::before {
+      @extend .u-position-absolute;
+      @extend .u-center;
+      color: $o-loader-color;
+      font-size: $o-loader-size;
+      margin-top: - calc($o-loader-size / 2);
+      margin-left: - calc($o-loader-size / 2);
+    }
+  }
+
+  /*
+    Absolute Loader:
+    Placed inside any element with position relative. Div, table, etc
+    Has background and size
+    Needs a color class (u-color-primary)
+    Has the size of the first relative / absolute / fixed parent
+    Can be used in tables, modals etc
+  */
+  &.is-absolute {
+    @extend %is-not-static;
+    @extend .u-position-absolute;
+    z-index: 100;
+  }
+
+  /*
+    Fixed Loader:
+    Can be placed anywhere in DOM
+    Has background and size
+    Needs a color class (u-color-primary)
+    Covers the whole page
+    Used for page loading
+  */
+  &.is-fixed {
+    @extend %is-not-static;
+    @extend .u-position-fixed;
+    z-index: 240;
+    top: $header-height;
+  }
+
+  /*Add this class to the loader to show it*/
+  &.is-visible {
+    display: inline-block;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

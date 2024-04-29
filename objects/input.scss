@@ -1,0 +1,17 @@
+// Input
+
+.o-input {
+  @extend %input;
+  @extend %reset-style;
+  padding: $gutter / 2;
+  &::placeholder {
+    color: $o-input-placeholder-color;
+    font-style: italic;
+  }
+  
+  &--mini {
+    height: 24px;
+    padding: calc($gutter / 6) calc($gutter / 6);
+    font-size: $font-size-xs !important;
+  }
+}

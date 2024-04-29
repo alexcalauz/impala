@@ -1,0 +1,87 @@
+%reset-style {
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+%input {
+  font-size: $font-size-m;
+  border-radius: $border-radius-default;
+  transition: border 0.2s, background-color 0.2s;
+  border: 1px solid $o-input-border-color;
+  color: $o-input-color;
+  background-color: $o-input-background-color;
+  font-family: inherit;
+  outline: none;
+  height: 40px;
+
+  &:focus {
+    border: 1px solid $o-input-border-color-focus;
+  }
+
+  &:disabled {
+    background-color: $o-input-border-color-disabled;
+  }
+
+  &.disabled {
+    background-color: $o-input-border-color-disabled;
+  }
+
+  &.is-dirty {
+    font-weight: bold;
+    border-color: $o-input-border-color-dirty;
+  }
+
+  &.height-auto {
+    height: auto;
+  }
+
+  &.is-invalid {
+    border-color: $o-input-border-color-invalid;
+    background-color: rgba($o-input-border-color-invalid, 5%);
+    &::placeholder {
+      color: rgba($o-input-border-color-invalid, 50%);
+    }
+  }
+
+  &::placeholder {
+    color: $o-input-placeholder-color;
+    transition: color 0.2s;
+  }
+  &::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: $o-input-placeholder-color;
+  }
+  &::-moz-placeholder {
+    /* Firefox 19+ */
+    color: $o-input-placeholder-color;
+  }
+  &:-ms-input-placeholder {
+    /* IE 10+ */
+    color: $o-input-placeholder-color;
+  }
+  &:-moz-placeholder {
+    /* Firefox 18- */
+    color: $o-input-placeholder-color;
+  }
+}
+
+%input-small {
+  @extend %input;
+  font-size: $font-size-s;
+  position: relative;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+}
+
+%input-arrow {
+  @extend %reset-style;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='6' fill='none'%3e%3cpath d='M1 1 L4 4L7 1L8 2L4 6L0 2L1 1Z' fill='%23292A2E'/%3e%3c/svg%3e");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+%input-arrow-light {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='6' fill='none'%3e%3cpath d='M1 1 L4 4L7 1L8 2L4 6L0 2L1 1Z' fill='white'/%3e%3c/svg%3e");
+}

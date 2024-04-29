@@ -1,0 +1,10 @@
+.o-link {
+  // text-decoration: underline;
+  color: $color-secondary;
+  &:hover {
+      color: darken($color-secondary, 10%);
+  }
+  &:active {
+      color: darken($color-secondary, 20%);
+  }
+}

@@ -1,0 +1,40 @@
+// Switch
+
+.o-switch {
+  display: inline-block;
+  width: $c-switch-width;
+  height: $c-switch-height;
+  position: relative;
+  border-radius: $c-switch-height / 2;
+  background-color: $c-switch-background-color-off;
+  overflow: hidden;
+  cursor: pointer;
+  border: none;
+  appearance: none;
+  margin: 0;
+
+  &--disabled {
+    pointer-events: none;
+    opacity: 0.3;
+  }
+
+  &:checked::after {
+    left: $c-switch-width - $c-switch-knob-size - ($c-switch-height - $c-switch-knob-size) / 2;
+    background-color: $c-switch-color-background-color-knob-on;
+    box-shadow: 0 0 0 $c-switch-width $c-switch-background-color-on;
+  }
+
+  &::after {
+    content: '';
+    width: $c-switch-knob-size;
+    height: $c-switch-knob-size;
+    border-radius: 50%;
+    background: $c-switch-color-background-color-knob-off;
+    transform: translateY(-50%);
+    top: 50%; 
+    position: absolute;
+    left: ($c-switch-height - $c-switch-knob-size) / 2;
+    transition: background-color 0.3s, left 0.3s, box-shadow 0.3s;
+    will-change: background-color, left, box-shadow;
+  }
+}

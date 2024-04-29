@@ -1,0 +1,55 @@
+.o-fileinput {
+  .fileinput {
+    &__preview-container {
+      padding: 5px;
+      @extend .u-border;
+      @extend .u-position-relative;
+    }
+    
+    &__preview-image {
+      width: 100%;
+      max-width: 100%;
+      @extend .u-position-relative;
+      @extend .u-center-v;
+    }
+    
+    &__preview-image-container {
+      border: 1px solid $o-input-border-color;
+      padding: 10px;
+    }
+    
+    &__button-remove {
+      width: $gutter;
+      height: $gutter;
+      background-color: #fff;
+      top: 5px;
+      z-index: 20;
+      right: 5px;
+      color: red;
+      line-height: 20px;
+      text-align: center;
+      cursor: pointer;
+      @extend .u-position-absolute;
+    }
+    
+    &__input-element {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      z-index: 90;
+      cursor: pointer;
+      
+      &::file-selector-button {
+        display: none;
+      }
+    }
+    
+    &__input-container {
+      position: relative;
+      display: inline-block;
+    }
+  }
+}

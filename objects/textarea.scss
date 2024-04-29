@@ -1,0 +1,14 @@
+// Textarea
+
+.o-textarea {
+  @extend %input;
+  @extend %reset-style;
+  padding: $gutter / 2;
+  resize: none;
+  overflow: hidden;
+  height: 200px;
+
+  &.is-low-height {
+    height: 100px;
+  }
+}

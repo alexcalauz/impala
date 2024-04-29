@@ -1,0 +1,50 @@
+
+
+.o-contact-bar {
+  padding: 5px 0;
+  z-index: 90;
+  position: fixed;
+  left: calc(100% - 47px);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.contact-bar__item {
+  height: 44px;
+  font-size: 0;
+  display: block;
+  transition: left .3s, background-color .3s;
+  left: 0;
+  white-space: nowrap;
+  position: relative;
+  background-color: rgba($color-secondary, .85);
+  margin-bottom: 1px;
+
+  &:hover {
+    left: calc(-100% + 47px);
+    background-color: rgba($color-secondary, 1);
+  }
+}
+
+.contact-bar__link {
+  padding: 15px 10px 15px 0;
+  font-size: $font-size-s;
+  display: inline-block;
+  line-height: 16px;
+  vertical-align: top;
+}
+
+.contact-bar__item-image {
+  width: auto;
+  height: 100%;
+}
+
+.contact-bar__item-icon {
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+  padding: 15px 10px;
+  width: 30px;
+  box-sizing: content-box;
+  height: 14px;
+}
