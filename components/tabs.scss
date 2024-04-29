@@ -34,6 +34,12 @@
     padding: $gutter;
     background: $c-tabs-panel-background;
     border: $c-tabs-border;
+    width: 100%;
+  }
+
+  &__label {
+    position: relative;
+    bottom: -1px;
   }
 
   &__input {
@@ -54,13 +60,12 @@
       border-top: $c-tabs-label-active-border;
       padding-bottom: 13px;
       padding-top: calc($gutter / 2);
-      margin-bottom: -1px;
       z-index: 22;
     }
   }
 }
 
-@media (min-width: $c-tabs-collapses-at + 1px) {
+@media (min-width: $c-tabs-collapses-at) {
   .tabs {
     &__label {
       width: auto;

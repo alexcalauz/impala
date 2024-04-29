@@ -71,37 +71,44 @@ $o-select-inverted-background-color: lighten($color-primary, 10);
 $o-select-inverted-border-color: lighten($color-primary, 10);
 
 // Loader
-$o-loader-color: $color-alt;
-$o-loader-background-color: rgba($color-positive, .8);
-$o-loader-icon-name: loader;
-$o-loader-size: 50px;
+$o-loader-color:                            $color-alt;
+$o-loader-background-color:                 rgba($color-positive, .8);
+$o-loader-icon-name:                        loader;
+$o-loader-size:                             50px;
+
+// Link
+$o-link-color:                              $color-secondary;
+$o-link-color-hover:                        darken($color-secondary, 10%);
+$o-link-color-active:                       darken($color-secondary, 20%);
+$o-link-underline-height:                   1px;
+$o-link-underline-offset:                   -1px;
 
 //Components
 
-// /* Nav */
-// //First Level items
-// $c-nav-list-background: $color-primary;
-// $c-nav-item-color: $color-neutral;
-// $c-nav-item-color-hover: $color-neutral;
-// $c-nav-item-background-hover: darken($color-primary, 4%);
-// $c-nav-item-color-active: $color-neutral;
-// $c-nav-item-background-active: darken($color-primary, 4%);
+/* Nav */
+//First Level items
+$c-nav-list-background: $color-neutral;
+$c-nav-link-color: $color-secondary;
+$c-nav-link-color-hover: $color-positive;
+$c-nav-item-background-hover: $color-secondary;
+$c-nav-item-color-active: $color-neutral-dark;
+$c-nav-item-background-active: darken($color-secondary, 4%);
 
-// //Other Levels items
-// $c-nav-list-background-secondlevel: $color-positive;
+//Other Levels items
+$c-nav-list-background-secondlevel: $color-neutral;
 // $c-nav-item-secondlevel-color: $color-neutral;
 // $c-nav-item-secondlevel-color-hover: lighten($color-primary, 10);
 // $c-nav-item-secondlevel-background-hover: $color-neutral;
 // $c-nav-item-secondlevel-color-active: $color-negative;
 // $c-nav-item-secondlevel-background-active: $color-neutral;
 // $c-nav-separator-border-color: $color-neutral;
-// //Misc
-// $c-nav-collapses-at: 1023px; //Point where the nav collapses into a burger menu.
+//Misc
+$c-nav-collapses-at: "sm"; //Breakpoint name where the nav collapses into a burger menu.
 // $c-nav-mobile-background-color: $color-negative;
 // $c-nav-mobile-color: $color-neutral;
 // $c-nav-icon-color-mobile: $color-positive;
 
-$header-height: 126px;
+$header-height: 60px;
 $z-index-above-header: 200;
 $z-index-below-header: 140;
 
@@ -162,7 +169,7 @@ $c-tabs-min-width: 700px;
 $c-tabs-collapses-at: 540px;
 $c-tabs-border: 1px solid $color-neutral;
 $c-tabs-label-color: $color-neutral;
-$c-tabs-label-background: $color-secondary;
+$c-tabs-label-background: $color-neutral;
 $c-tabs-label-hover-background: $color-neutral;
 $c-tabs-label-focus-background: $color-neutral;
 $c-tabs-label-active-background: $color-positive;

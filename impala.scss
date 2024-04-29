@@ -20,8 +20,9 @@
 // @import 'objects/table.scss';
 // @import 'objects/alert.scss';
 
-@import 'components/modal.scss';
-// @import 'components/tabs.scss';
-
 @import 'utils.scss';
 @import 'grid.scss';
+
+@import 'components/modal.scss';
+@import 'components/nav.scss';
+@import 'components/tabs.scss';

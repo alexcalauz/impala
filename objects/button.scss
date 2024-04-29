@@ -1,6 +1,6 @@
 // Button
 
-$o-button-padding-v: $gutter / 2;
+$o-button-padding-v: calc($gutter / 2);
 $o-button-padding-h: $gutter;
 
 .o-button {

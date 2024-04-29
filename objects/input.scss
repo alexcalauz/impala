@@ -3,7 +3,7 @@
 .o-input {
   @extend %input;
   @extend %reset-style;
-  padding: $gutter / 2;
+  padding: calc($gutter / 2);
   &::placeholder {
     color: $o-input-placeholder-color;
     font-style: italic;
