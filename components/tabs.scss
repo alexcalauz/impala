@@ -1,16 +1,20 @@
 // Tabs
+$c-tabs-label-gap: calc($gutter / 4);
+$c-tabs-label-border-radius: calc($gutter / 4);
 
 .c-tabs {
   display: flex;
   flex-wrap: wrap;
   background: $c-tabs-background;
+  gap: 0 $c-tabs-label-gap;
 }
 
 .tabs {
   &__label {
     width: 100%;
-    @extend .o-button;
-    border-radius: 0 !important;
+    padding: calc($gutter / 2) $gutter;
+    // @extend .o-button;
+    border-radius: $c-tabs-label-border-radius $c-tabs-label-border-radius 0 0;
     background: $c-tabs-label-background;
     border-top: $c-tabs-border;
     border-right: $c-tabs-border;
@@ -40,6 +44,7 @@
   &__label {
     position: relative;
     bottom: -1px;
+    align-self: flex-end;
   }
 
   &__input {
