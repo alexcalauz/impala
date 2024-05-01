@@ -1,0 +1,12 @@
+// Button
+
+$o-button-padding-v: calc($gutter / 2);
+$o-button-padding-h: $gutter;
+
+.c-pagination {
+  .pagination__item {
+    @extend .o-button;
+    @extend .o-button--primary;
+    @extend .o-button--mini;
+  }
+}

@@ -2,6 +2,7 @@
 
 $o-button-padding-v: calc($gutter / 2);
 $o-button-padding-h: $gutter;
+$o-button-mini-height: 30px;
 
 .o-button {
   padding: $o-button-padding-v $o-button-padding-h;
@@ -32,8 +33,9 @@ $o-button-padding-h: $gutter;
   //   height: $o-button-height;
   // }
   &--mini {
-    height: 36px;
-    padding: calc($gutter / 4) calc($gutter / 2);
+    height: $o-button-mini-height;
+    line-height: $o-button-mini-height;
+    padding: 0 calc($gutter / 2);
     font-size: $font-size-s;
   }
 
