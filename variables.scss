@@ -2,8 +2,8 @@
 // Global Colors
 $color-positive:            #ffffff     !default;
 $color-negative:            #000000     !default;
-$color-primary:             #4a9717     !default;
-$color-secondary:           #0b74a8     !default;
+$color-primary:             #0b98e0     !default;
+$color-secondary:           #5bad24     !default;
 $color-alt:                 #868686     !default;
 $color-neutral:             #f2f2f2     !default;
 $color-neutral-dark:        #c3c3c3     !default;
@@ -13,15 +13,12 @@ $color-success:             green       !default;
 $color-warning:             orange      !default;
 $color-info:                blue        !default;
 
-// Shadows
-$box-shadow-main:           0 0 10px rgba($color-negative, .15);
-
 // Borders
 $border-width-default:      1px           !default;
 $border-width-secondary:    3px           !default;
 $border-width-alt:          6px           !default;
 
-$border-radius-default:     4px           !default;
+$border-radius-default:     0           !default;
 $border-radius-alt:         8px           !default;
 
 // Font Sizes
@@ -33,7 +30,7 @@ $font-size-m:               16px          !default;
 $font-size-l:               18px          !default;
 $font-size-xl:              22px          !default;
 $font-size-xxl:             28px          !default;
-$font-size-xxxl:            32px          !default;
+$font-size-xxxl:            36px          !default;
 
 // Gutter
 $gutter: 20px;
@@ -59,11 +56,12 @@ $o-button-height: 44px;
 $o-input-border-color: $color-neutral-dark;
 $o-input-color: $color-negative;
 $o-input-background-color: $color-positive;
-$o-input-placeholder-color: lighten($o-input-color, 70%);
+$o-input-placeholder-color: darken($color-neutral-dark, 25);
 
 $o-input-border-color-focus: darken($color-neutral-dark, 10%);
 $o-input-border-color-dirty: $color-warning;
 $o-input-border-color-invalid: $color-error;
+$o-input-background-color-invalid: lighten($color-error, 47%);
 $o-input-border-color-disabled: darken($color-positive, 10%);
 
 // Select
@@ -71,57 +69,50 @@ $o-select-inverted-background-color: lighten($color-primary, 10);
 $o-select-inverted-border-color: lighten($color-primary, 10);
 
 // Loader
-$o-loader-color:                            $color-alt;
-$o-loader-background-color:                 rgba($color-positive, .8);
-$o-loader-icon-name:                        loader;
-$o-loader-size:                             50px;
-
-// Link
-$o-link-color:                              $color-secondary;
-$o-link-color-hover:                        darken($color-secondary, 10%);
-$o-link-color-active:                       darken($color-secondary, 20%);
-$o-link-underline-height:                   1px;
-$o-link-underline-offset:                   -1px;
+$o-loader-color: $color-alt;
+$o-loader-background-color: rgba($color-positive, .8);
+$o-loader-icon-name: spinner;
+$o-loader-size: 50px;
 
 //Components
 
-/* Nav */
-//First Level items
-$c-nav-list-background: $color-neutral;
-$c-nav-link-color: $color-secondary;
-$c-nav-link-color-hover: $color-positive;
-$c-nav-item-background-hover: $color-secondary;
-$c-nav-item-color-active: $color-neutral-dark;
-$c-nav-item-background-active: darken($color-secondary, 4%);
+// /* Nav */
+// //First Level items
+// $c-nav-list-background: $color-primary;
+// $c-nav-item-color: $color-neutral;
+// $c-nav-item-color-hover: $color-neutral;
+// $c-nav-item-background-hover: darken($color-primary, 4%);
+// $c-nav-item-color-active: $color-neutral;
+// $c-nav-item-background-active: darken($color-primary, 4%);
 
-//Other Levels items
-$c-nav-list-background-secondlevel: $color-neutral;
+// //Other Levels items
+// $c-nav-list-background-secondlevel: $color-positive;
 // $c-nav-item-secondlevel-color: $color-neutral;
 // $c-nav-item-secondlevel-color-hover: lighten($color-primary, 10);
 // $c-nav-item-secondlevel-background-hover: $color-neutral;
 // $c-nav-item-secondlevel-color-active: $color-negative;
 // $c-nav-item-secondlevel-background-active: $color-neutral;
 // $c-nav-separator-border-color: $color-neutral;
-//Misc
-$c-nav-collapses-at: "sm"; //Breakpoint name where the nav collapses into a burger menu.
+// //Misc
+// $c-nav-collapses-at: 1023px; //Point where the nav collapses into a burger menu.
 // $c-nav-mobile-background-color: $color-negative;
 // $c-nav-mobile-color: $color-neutral;
 // $c-nav-icon-color-mobile: $color-positive;
 
-$header-height: 60px;
+$header-height: 126px;
 $z-index-above-header: 200;
 $z-index-below-header: 140;
 
 //Switch
-$c-switch-width: 35px;
-$c-switch-height: 20px;
-$c-switch-knob-size: 16px;
-
-$c-switch-background-color-on: $color-primary;
-$c-switch-background-color-off: $color-neutral-dark;
-
-$c-switch-color-background-color-knob-on: $color-neutral;
-$c-switch-color-background-color-knob-off: $color-positive;
+$c-switch-width: 66px;
+$c-switch-height: 24px;
+$c-switch-knob-size: 28px;
+$c-switch-color-background-color-knob-on: $color-alt;
+$c-switch-color-background-color-label-on: lighten($color-alt, 56);
+$c-switch-color-color-on: $color-alt;
+$c-switch-color-background-color-knob-off: $color-neutral;
+$c-switch-color-background-color-label-off: lighten($color-neutral, 20);
+$c-switch-color-color-off: $color-neutral;
 
 /*Modal*/
 $c-modal-background: $color-positive;
@@ -131,7 +122,7 @@ $c-modal-backdrop-bg-color: rgba(0, 0, 0, .5);
 $c-modal-box-shadow: 0 0 20px rgba(0, 0, 0, .25);
 $c-modal-max-width: 500px;
 $c-modal-large-width: 800px;
-$c-modal-xlarge-width: 1300px;
+$c-modal-xlarge-width: 1000px;
 $c-modal-min-width: 500px;
 $c-modal-goes-fullscreen-at: 540px;
 $c-modal-title-color: $color-positive;
@@ -161,7 +152,6 @@ $o-table-background-color-primary: lighten($color-primary, 50%);
 $o-table-background-color-secondary: $color-secondary;
 $o-table-background-color-warning: lighten($color-warning, 40%);
 $o-table-border-radius: $border-radius-alt;
-$o-table-box-shadow: $box-shadow-main;
 
 /*Tabs*/
 $c-tabs-background: transparent;
@@ -169,7 +159,7 @@ $c-tabs-min-width: 700px;
 $c-tabs-collapses-at: 540px;
 $c-tabs-border: 1px solid $color-neutral;
 $c-tabs-label-color: $color-neutral;
-$c-tabs-label-background: $color-neutral;
+$c-tabs-label-background: $color-secondary;
 $c-tabs-label-hover-background: $color-neutral;
 $c-tabs-label-focus-background: $color-neutral;
 $c-tabs-label-active-background: $color-positive;

@@ -1,20 +1,16 @@
 // Tabs
-$c-tabs-label-gap: calc($gutter / 4);
-$c-tabs-label-border-radius: calc($gutter / 4);
 
 .c-tabs {
   display: flex;
   flex-wrap: wrap;
   background: $c-tabs-background;
-  gap: 0 $c-tabs-label-gap;
 }
 
 .tabs {
   &__label {
     width: 100%;
-    padding: calc($gutter / 2) $gutter;
-    // @extend .o-button;
-    border-radius: $c-tabs-label-border-radius $c-tabs-label-border-radius 0 0;
+    @extend .o-button;
+    border-radius: 0 !important;
     background: $c-tabs-label-background;
     border-top: $c-tabs-border;
     border-right: $c-tabs-border;
@@ -38,13 +34,6 @@ $c-tabs-label-border-radius: calc($gutter / 4);
     padding: $gutter;
     background: $c-tabs-panel-background;
     border: $c-tabs-border;
-    width: 100%;
-  }
-
-  &__label {
-    position: relative;
-    bottom: -1px;
-    align-self: flex-end;
   }
 
   &__input {
@@ -65,12 +54,13 @@ $c-tabs-label-border-radius: calc($gutter / 4);
       border-top: $c-tabs-label-active-border;
       padding-bottom: 13px;
       padding-top: calc($gutter / 2);
+      margin-bottom: -1px;
       z-index: 22;
     }
   }
 }
 
-@media (min-width: $c-tabs-collapses-at) {
+@media (min-width: $c-tabs-collapses-at + 1px) {
   .tabs {
     &__label {
       width: auto;

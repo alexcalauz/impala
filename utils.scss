@@ -154,9 +154,6 @@ $floats: (left, right);
 // Aspect Borders
 @include borders();
 
-// Box Shadows
-@include main-utils($box-shadows, 'box-shadow');
-
 @each $device, $breakpoints in $media-query-breakpoints {
   $min-width: nth($breakpoints, 1);
   $max-width: nth($breakpoints, 2);
@@ -253,8 +250,4 @@ $floats: (left, right);
 
 .u-overflow-hidden {
   overflow: hidden;
-}
-
-.u-white-space-nowrap {
-  white-space: nowrap;
 }

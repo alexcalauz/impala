@@ -1,41 +1,10 @@
 .o-link {
-  color: $o-link-color;
-
+  text-decoration: underline;
+  color: $color-secondary;
   &:hover {
-      color: $o-link-color-hover;
+      color: darken($color-secondary, 10%);
   }
   &:active {
-      color: $o-link-color-active;
-  }
-  
-  &.has-underline {
-    text-decoration: underline;
-  }
-
-  &.has-underline-animation {
-    text-decoration: none;
-    position: relative;
-    transition: color .3s;
-  }
-
-  &.has-underline-animation::before {
-    content: '';
-    width: auto;
-    position: absolute;
-    bottom: $o-link-underline-offset;
-    height: $o-link-underline-height;
-    width: 0;
-    background-color: $o-link-color;
-    transition: width .3s, background-color .3s;
-  }
-
-  &.has-underline-animation:hover::before {
-    width: 100%;
-    background-color: $o-link-color-hover;
-    left: 0;
-  }
-
-  &.has-underline-animation:not(:hover)::before {
-    right: 0;
+      color: darken($color-secondary, 20%);
   }
 }

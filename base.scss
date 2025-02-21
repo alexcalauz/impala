@@ -1,9 +1,5 @@
 // Base
 
-* {
-  box-sizing: border-box;
-}
-
 body {
   font-family: 'Open Sans', Helvetica, sans-serif;
   font-size: $font-size-m;
@@ -36,13 +32,13 @@ h2 {
 }
 
 h3 {
-  padding: calc($gutter / 2) 0;
+  padding: $gutter / 2 0;
   font-size: $font-size-h3;
   line-height: $font-size-h3 + 2px;
 }
 
 h4 {
-  padding: calc($gutter / 2) 0;
+  padding: $gutter / 2 0;
   font-size: $font-size-h4;
   line-height: $font-size-h4 + 4px;
 }

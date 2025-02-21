@@ -10,15 +10,6 @@ $half-gutter: calc($gutter / 2);
 
   > [class*=col-] {
     // overflow-x: hidden;
-    &.col--vertical-align-middle {
-      align-self: center;
-    }
-    &.col--vertical-align-bottom {
-      align-self: end;
-    }
-    &.col--vertical-align-top {
-      align-self: start;
-    }
   }
 
   &--spaced {

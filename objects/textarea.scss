@@ -3,7 +3,7 @@
 .o-textarea {
   @extend %input;
   @extend %reset-style;
-  padding: calc($gutter / 2);
+  padding: $gutter / 2;
   resize: none;
   overflow: hidden;
   height: 200px;

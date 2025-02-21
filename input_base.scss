@@ -4,9 +4,9 @@
 }
 
 %input {
-  font-size: $font-size-m;
+  font-size: $font-size-s;
   border-radius: $border-radius-default;
-  transition: border 0.2s, background-color 0.2s;
+  transition: border 0.2s;
   border: 1px solid $o-input-border-color;
   color: $o-input-color;
   background-color: $o-input-background-color;
@@ -37,15 +37,11 @@
 
   &.is-invalid {
     border-color: $o-input-border-color-invalid;
-    background-color: rgba($o-input-border-color-invalid, 5%);
-    &::placeholder {
-      color: rgba($o-input-border-color-invalid, 50%);
-    }
+    background-color: $o-input-background-color-invalid;
   }
 
   &::placeholder {
     color: $o-input-placeholder-color;
-    transition: color 0.2s;
   }
   &::-webkit-input-placeholder {
     /* Chrome/Opera/Safari */

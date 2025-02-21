@@ -25,23 +25,35 @@
     overflow: visible;
   }
 
+  @media screen and (max-width: ($c-modal-min-width + ($gutter * 2))) {
+    max-height: none;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+  }
+
   &.c-modal-large {
     width: $c-modal-large-width;
     max-width: none;
-    min-width: none;
+    min-width: 0;
+    max-height: none;
 
-    @media screen and (max-width: $c-modal-large-width) {
-      width: 100vw;
+    @media screen and (max-width: ($c-modal-large-width + ($gutter * 2))) {
+      max-height: none;
+      width: 100%;
+      height: 100%;
     }
   }
 
   &.c-modal-xlarge {
     width: $c-modal-xlarge-width;
     max-width: none;
-    min-width: none;
+    min-width: 0;
 
-    @media screen and (max-width: $c-modal-xlarge-width) {
-      width: 100vw;
+    @media screen and (max-width: ($c-modal-xlarge-width + ($gutter * 2))) {
+      max-height: none;
+      height: 100%;
+      width: 100%;
     }
   }
 
@@ -60,7 +72,7 @@
       width: 100%;
       margin-top: 0px;
     }
-    width: calc(100vw - #{$gutter * 2});
+    width: 100%;
     max-width: none;
     min-width: unset;
     overflow: auto;

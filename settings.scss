@@ -34,7 +34,6 @@ $backgrounds: (
   warning-light: lighten($color-warning, 40),
   error: $color-error,
   neutral: $color-neutral,
-  neutral-dark: $color-neutral-dark,
 ) !default;
 
 // Text Colors
@@ -60,11 +59,6 @@ $borders: (
   alt: ($border-width-alt, solid, $color-primary),
   error: ($border-width-default, solid, $color-error),
   warning: ($border-width-default, solid, $color-warning),
-) !default;
-
-//Box Shadows
-$box-shadows: (
-  main: $box-shadow-main,
 ) !default;
 
 // Badges
@@ -150,18 +144,6 @@ $aspect-ratios: (
 $buttons: (
   primary: (
     normal: (
-      backgroundColor: $color-primary,
-      textColor: $color-positive,
-    ),
-    hover: (
-      backgroundColor: darken($color-primary, 10),
-    ),
-    active: (
-      backgroundColor: darken($color-primary, 20),
-    ),
-  ),
-  secondary: (
-    normal: (
       backgroundColor: $color-secondary,
       textColor: $color-positive,
     ),
@@ -170,6 +152,20 @@ $buttons: (
     ),
     active: (
       backgroundColor: darken($color-secondary, 20),
+    ),
+  ),
+  secondary: (
+    normal: (
+      backgroundColor: transparent,
+      textColor: $color-secondary,
+      border: (2px, solid, $color-secondary),
+    ),
+    hover: (
+      border: (2px, solid, darken($color-secondary, 10%)),
+      backgroundColor: rgba($color-positive, .3),
+    ),
+    active: (
+      backgroundColor: $color-positive,
     ),
   ),
   alt: (
@@ -183,6 +179,18 @@ $buttons: (
     ),
     active: (
       backgroundColor: rgba($color-positive, .10),
+    ),
+  ),
+  blue: (
+    normal: (
+      backgroundColor: $color-primary,
+      textColor: $color-positive,
+    ),
+    hover: (
+      backgroundColor: darken($color-primary, .20),
+    ),
+    active: (
+      backgroundColor: darken($color-primary, .10),
     ),
   ),
   danger: (

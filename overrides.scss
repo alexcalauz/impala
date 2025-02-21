@@ -1,2 +1,157 @@
 
+// Global Colors
 
+$color-error:               red;
+$color-success:             green;
+$color-warning:             orange;
+$color-info:                blue;
+
+// Borders
+$border-width-default:      1px           !default;
+$border-width-alt:          6px           !default;
+
+$border-radius-default:     3px           !default;
+$border-radius-alt:         10px           !default;
+
+// Font Sizes
+$font-size-xs:              12px          !default;
+$font-size-s:               14px          !default;
+$font-size-m:               16px          !default;
+$font-size-l:               18px          !default;
+$font-size-xl:              22px          !default;
+$font-size-xxl:             36px          !default;
+$font-size-xxxl:            42px          !default;
+
+// Gutter
+$gutter: 20px;
+
+// H1-H6 font sizes
+$font-size-h1: $font-size-xxxl;
+$font-size-h2: $font-size-xxl;
+$font-size-h3: $font-size-xl;
+$font-size-h4: $font-size-l;
+$font-size-h5: $font-size-m;
+$font-size-h6: $font-size-s;
+
+//Badge
+$u-badge-padding-v:       calc($gutter / 4);
+$u-badge-padding-h:       calc($gutter / 2);
+$u-badge-border-radius:   $border-radius-default;
+$u-badge-font-size:       $font-size-s;
+
+// Button
+$o-button-height: 44px;
+
+// Input
+$o-input-border-color: $color-neutral-dark;
+$o-input-color: $color-negative;
+$o-input-background-color: $color-positive;
+$o-input-placeholder-color: $color-neutral-dark;
+
+$o-input-border-color-focus: darken($color-neutral-dark, 10%);
+$o-input-border-color-dirty: $color-warning;
+$o-input-border-color-invalid: $color-error;
+$o-input-border-color-disabled: darken($color-neutral, 10%);
+
+// Select
+$o-select-inverted-background-color: $color-positive;
+$o-select-inverted-border-color: $color-neutral-dark;
+
+// Loader
+$o-loader-color: $color-alt;
+$o-loader-background-color: rgba($color-positive, .8);
+$o-loader-icon-name: spinner;
+$o-loader-size: 50px;
+
+//Components
+
+// /* Nav */
+// //First Level items
+// $c-nav-list-background: $color-primary;
+// $c-nav-item-color: $color-neutral;
+// $c-nav-item-color-hover: $color-neutral;
+// $c-nav-item-background-hover: darken($color-primary, 4%);
+// $c-nav-item-color-active: $color-neutral;
+// $c-nav-item-background-active: darken($color-primary, 4%);
+
+// //Other Levels items
+// $c-nav-list-background-secondlevel: $color-positive;
+// $c-nav-item-secondlevel-color: $color-neutral;
+// $c-nav-item-secondlevel-color-hover: lighten($color-primary, 10);
+// $c-nav-item-secondlevel-background-hover: $color-neutral;
+// $c-nav-item-secondlevel-color-active: $color-negative;
+// $c-nav-item-secondlevel-background-active: $color-neutral;
+// $c-nav-separator-border-color: $color-neutral;
+// //Misc
+// $c-nav-collapses-at: 1023px; //Point where the nav collapses into a burger menu.
+// $c-nav-mobile-background-color: $color-negative;
+// $c-nav-mobile-color: $color-neutral;
+// $c-nav-icon-color-mobile: $color-positive;
+
+$header-height: 126px;
+$z-index-above-header: 200;
+$z-index-below-header: 140;
+
+//Switch
+$c-switch-width: 66px;
+$c-switch-height: 24px;
+$c-switch-knob-size: 28px;
+$c-switch-color-background-color-knob-on: $color-alt;
+$c-switch-color-background-color-label-on: lighten($color-alt, 56);
+$c-switch-color-color-on: $color-alt;
+$c-switch-color-background-color-knob-off: $color-neutral;
+$c-switch-color-background-color-label-off: lighten($color-neutral, 20);
+$c-switch-color-color-off: $color-neutral;
+
+/*Modal*/
+$c-modal-background: $color-positive;
+$c-modal-close-color: $color-neutral;
+$c-modal-border-radius: $border-radius-alt;
+$c-modal-backdrop-bg-color: rgba(0, 0, 0, .5);
+$c-modal-box-shadow: 0 0 20px rgba(0, 0, 0, .25);
+$c-modal-max-width: 500px;
+$c-modal-large-width: 800px;
+$c-modal-xlarge-width: 1300px;
+$c-modal-min-width: 500px;
+$c-modal-goes-fullscreen-at: 540px;
+$c-modal-title-color: $color-positive;
+
+/*Table*/
+
+// Table Object
+$o-table-loader-color: $color-primary;
+$o-table-row-border-color: $color-neutral;
+$o-table-head-color: $color-neutral;
+$o-table-row-color: $color-negative;
+$o-table-background-color: $color-positive;
+$o-table-link-color: $color-neutral;
+$o-table-link-color-hover: $color-negative;
+$o-table-link-hover-color: darken($color-primary, 25);
+
+$o-table-row-alt-background-color: lighten($color-neutral, 18);
+
+$o-table-row-highlight-background-color: $color-alt;
+
+$o-table-hover-background-color: darken($color-positive, 5%);
+$o-table-hover-background-color-primary: lighten($color-primary, 40%);
+$o-table-hover-background-color-secondary: darken($color-secondary, 10%);
+$o-table-hover-background-color-warning: lighten($color-warning, 30%);
+
+$o-table-background-color-primary: lighten($color-primary, 50%);
+$o-table-background-color-secondary: $color-secondary;
+$o-table-background-color-warning: lighten($color-warning, 40%);
+$o-table-border-radius: $border-radius-alt;
+
+/*Tabs*/
+$c-tabs-background: transparent;
+$c-tabs-min-width: 700px;
+$c-tabs-collapses-at: 540px;
+$c-tabs-border: 1px solid $color-neutral;
+$c-tabs-label-color: $color-neutral;
+$c-tabs-label-background: $color-secondary;
+$c-tabs-label-hover-background: $color-neutral;
+$c-tabs-label-focus-background: $color-neutral;
+$c-tabs-label-active-background: $color-positive;
+$c-tabs-label-active-border: 3px solid $color-primary;
+$c-tabs-label-active-color: $color-negative;
+$c-tabs-panel-background: $color-positive;

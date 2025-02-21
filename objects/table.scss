@@ -6,7 +6,7 @@
   border-radius: $o-table-border-radius;
   overflow: hidden;
   font-size: $font-size-m;
-  box-shadow: $o-table-box-shadow;
+  box-shadow: 0px 3px 24px rgba(0, 0, 0, 0.02), 0px 3px 8px rgba(0, 0, 0, 0.08);
   background-color: $o-table-background-color;
 
   &--alt {

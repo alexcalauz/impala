@@ -1,8 +1,7 @@
 // Button
 
-$o-button-padding-v: calc($gutter / 2);
+$o-button-padding-v: $gutter / 2;
 $o-button-padding-h: $gutter;
-$o-button-mini-height: 30px;
 
 .o-button {
   padding: $o-button-padding-v $o-button-padding-h;
@@ -24,27 +23,21 @@ $o-button-mini-height: 30px;
   appearance: none;
   -webkit-appearance: none;
   border-width: 0;
-  height: $o-button-height;
 
   &:not(.o-button--square) {
     border-radius: $border-radius-default;
   }
-  // &:not(.flexibleHeight) {
-  //   height: $o-button-height;
-  // }
+  &:not(.flexibleHeight) {
+    height: $o-button-height;
+  }
   &--mini {
-    height: $o-button-mini-height;
-    line-height: $o-button-mini-height;
-    padding: 0 calc($gutter / 2);
+    padding: calc($gutter / 4) calc($gutter / 2);
     font-size: $font-size-s;
   }
 
-  &.o-button--disabled,
-  &[disabled] {
+  &.o-button--disabled {
     cursor: not-allowed;
-    color: darken($color-neutral, 5%);
-    background-color: $color-neutral-dark;
-    pointer-events: none;
+    color: darken($color-neutral, 10);
     border-color: $color-neutral;
   }
 
